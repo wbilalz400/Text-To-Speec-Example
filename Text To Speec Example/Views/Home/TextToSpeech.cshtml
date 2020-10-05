@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "TextToSpeech";
+}
+
+
+
+
+<div class="col-md-12">
+    <div class="row">
+        <h1>Google Cloud based Text To Speech</h1>
+    </div>
+    <audio  style="" src="https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3" id="speechPlay"></audio>
+    <div class="row">
+        <input type="button" onclick="speak();" value="Speak" />
+        <input type="button" onclick="$('#speechPlay')[0].pause()" value="Pause" />
+        <input type="button" onclick="$('#speechPlay')[0].play()" value="Resume" />
+        <input type="button" onclick="$('#speechPlay')[0].load()" value="Stop" />
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <small>Enter text to speak or play the default text if nothing entered</small>
+            <input type="text" id="speaktext" />
+        </div>
+    </div>
+    <div class="row">
+        <input type="button" onclick="window.location.href='/'" value="GO TO Browser Based" />
+    </div>
+    <p id="speakpara">
+        A number of Saudi-listed companies temporarily closed their branches across the kingdom, in line with the Kingdom’s efforts to control the spread of coronavirus (COVID-19), data compiled by Argaam showed.
+
+
+
+        The outbreak of COVID-19 affected the companies’ operations, and the relevant financial impact cannot be defined at present.
+
+
+
+        Earlier this month, the Kingdom decided to suspend international flights, close malls and supermarkets, and suspend sports and entertainment activities.
+
+
+
+        The decision came in accordance with the preventive and precautionary measures recommended by the competent health authorities in the Kingdom, as part of its efforts to curb the spread of the novel coronavirus (COVID19).
+    </p>
+
+
+</div>
+<script type="text/javascript">
+
+    var synth = window.speechSynthesis;
+    var voices = []
+    var voiceSelect = $("#voiceSelect");
+
+    const populateVoices = () => {
+        var selectedVoice = "";
+        if (voices.length !== 0) {
+            selectedVoice = voiceSelect.val();
+        }
+        voices = synth.getVoices();
+        voiceSelect[0].innerHTML = "<option value='-1'>Select Voice</option>";
+
+        voices.forEach(voice => {
+            let option = document.createElement("option");
+            option.textContent = `${voice.name} (${voice.lang})`;
+            option.value = voice.name;
+            voiceSelect[0].appendChild(option);
+        });
+        if (selectedVoice !== "") {
+            voiceSelect.val(selectedVoice);
+        }
+    }
+    const speak = () => {
+        let toSpeak = $('#speaktext').val();
+        
+            if (toSpeak == "") {
+                toSpeak = $('#speakpara').html();
+            }
+       
+        $.ajax({
+            url: '/Home/TextToSpeech?text=' + toSpeak,
+            method: "POST",
+            responseType: 'blob',
+            data: {
+                "text": toSpeak,
+            },
+            success: result => {
+                let blob = new Blob([result], { type: 'audio/mpeg' });
+                let ObjectURL = URL.createObjectURL(blob);
+                $("#speechPlay")[0].src = "data:audio/mp3;base64,"+result;
+                $('#speechPlay')[0].play();
+            }
+        });
+    }
+    $(document).ready(() => {
+        populateVoices();
+        if (synth.onvoiceschanged !== undefined)
+            synth.onvoiceschanged = populateVoices;
+
+    }
+    )
+</script>
