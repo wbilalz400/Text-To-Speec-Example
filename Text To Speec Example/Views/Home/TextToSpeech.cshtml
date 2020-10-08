@@ -6,81 +6,541 @@
 
 
 
-<div class="col-md-12">
-    <div class="row">
-        <h1>Google Cloud based Text To Speech</h1>
-    </div>
-    <audio  style="" src="https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3" id="speechPlay"></audio>
-    <div class="row">
-        <input type="button" onclick="speak();" value="Speak" />
-        <input type="button" onclick="$('#speechPlay')[0].pause()" value="Pause" />
-        <input type="button" onclick="$('#speechPlay')[0].play()" value="Resume" />
-        <input type="button" onclick="$('#speechPlay')[0].load()" value="Stop" />
-    </div>
-    <div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <h1>Google Cloud based Text To Speech</h1>
+        </div>
+        <audio style="" src="https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_5MG.mp3" id="speechPlay"></audio>
+        <div class="row">
+            <input type="button" onclick="speak();" value="Speak" />
+            <input type="button" onclick="$('#speechPlay')[0].pause()" value="Pause" />
+            <input type="button" onclick="$('#speechPlay')[0].play()" value="Resume" />
+            <input type="button" onclick="$('#speechPlay')[0].load()" value="Stop" />
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <small>Enter text to speak or play the default text if nothing entered</small>
+                <input type="text" id="speaktext" />
+            </div>
+        </div>
+        <div class="row">
+            <select id="lang">
+                <option value="en-us">English</option>
+                <option value="ar-sa">Arabic</option>
+            </select>
+            <select id="voice">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+                <option value="2">Neutral</option>
+            </select><br />
+            <span>Speed <input type="range" min="0.25" max="4" step="0.25" value="1" id="rate" /></span>
+        </div>
+        <div class="row">
+            <input type="button" onclick="window.location.href='/'" value="GO TO Browser Based" />
+        </div>
         <div class="col-md-12">
-            <small>Enter text to speak or play the default text if nothing entered</small>
-            <input type="text" id="speaktext" />
+            <span><input type="radio" value="en" name="article" checked />English</span>
+            <p id="speakparaEN">
+                A number of Saudi-listed companies temporarily closed their branches across the kingdom, in line with the Kingdom’s efforts to control the spread of coronavirus (COVID-19), data compiled by Argaam showed.
+
+
+
+                The outbreak of COVID-19 affected the companies’ operations, and the relevant financial impact cannot be defined at present.
+
+
+
+                Earlier this month, the Kingdom decided to suspend international flights, close malls and supermarkets, and suspend sports and entertainment activities.
+
+
+
+                The decision came in accordance with the preventive and precautionary measures recommended by the competent health authorities in the Kingdom, as part of its efforts to curb the spread of the novel coronavirus (COVID19).
+
+            </p>
+
+            <div class="ck-editor article m-bottom">
+                <p style=""><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">The Saudi Stock Exchange (<strong>Tadawul</strong>) witnessed three negotiated deals today, Oct. 6, 2020, on <a href="https://www.argaam.com/en/tadawul/tasi/alrajhi" target="_blank">Al Rajhi</a> and <a href="https://www.argaam.com/en/tadawul/tasi/mouwasat" target="_blank">Mouwasat</a>, at a total value of SAR 48.3 million.</span></span></p><div class="teads-adCall"></div>
+
+                <p>&nbsp;</p>
+
+                <p><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;">A negotiated deal involves a stock purchase based on a bargain between buyers and sellers, apart from market price. The negotiated price does not impact directly on market price.</span></span></p>
+
+                <p>&nbsp;</p>
+
+                <table align="center" border="0" cellpadding="0" cellspacing="0" style="width:100.0%;background:white;border-collapse:collapse;" width="100%">
+                    <tbody>
+                        <tr style="height:29px;">
+                            <td colspan="5" style="width:100.0%;border-top:solid #F79646 1.5pt;border-left:none;border-bottom:solid #F79646 1.5pt;border-right:none;background:transparent;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><strong><span style="color:#E36C0A;">Key Facts</span></strong></span></span></p>
+                            </td>
+                        </tr>
+                        <tr style="height:29px;">
+                            <td style="width:25.56%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                                <p style="margin-bottom:0in;margin-bottom:.0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><strong><span style="color:black;">Company</span></strong></span></span></p>
+                            </td>
+                            <td style="width:18.86%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><strong><span style="color:black;">Market Price</span></strong></span></span></p>
+
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;">
+                                    <br>
+                                    <span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">(SAR)</span></span></span>
+                                </p>
+                            </td>
+                            <td style="width:18.52%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;">
+                                    <span style="font-size:16px;">
+                                        <span style="font-family:times new roman,times,serif;">
+                                            <strong><span style="color:black;">Negotiated Price</span></strong><br>
+                                            <span style="color:black;">(SAR)</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </td>
+                            <td style="width:18.52%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><strong><span style="color:black;">Shares Traded</span></strong></span></span></p>
+                            </td>
+                            <td style="width:18.52%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;">
+                                    <span style="font-size:16px;">
+                                        <span style="font-family:times new roman,times,serif;">
+                                            <strong><span style="color:black;">Value</span></strong><br>
+                                            <span style="color:black;">(SAR mln)</span>
+                                        </span>
+                                    </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr style="height:29px;">
+                            <td style="width:25.56%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                                <p style="margin-bottom:0in;margin-bottom:.0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><strong><span style="color:#E36C0A;">Al Rajhi</span></strong></span></span></p>
+                            </td>
+                            <td style="width:18.86%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">66.40</span></span></span></p>
+                            </td>
+                            <td style="width:18.52%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">66.30</span></span></span></p>
+                            </td>
+                            <td style="width:18.52%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">452,000</span></span></span></p>
+                            </td>
+                            <td style="width:18.52%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">29.97</span></span></span></p>
+                            </td>
+                        </tr>
+                        <tr style="height:29px;">
+                            <td rowspan="2" style="width:25.56%;border:none;border-bottom:solid #F79646 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                                <p style="margin-bottom:0in;margin-bottom:.0001pt;text-align:left;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><strong><span style="color:#E36C0A;">Mouwasat</span></strong></span></span></p>
+                            </td>
+                            <td rowspan="2" style="width:18.86%;border:none;border-bottom:solid #F79646 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">124.80</span></span></span></p>
+                            </td>
+                            <td rowspan="2" style="width:18.52%;border:none;border-bottom:solid #F79646 1.0pt;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">125.40</span></span></span></p>
+                            </td>
+                            <td style="width:18.52%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">121,417</span></span></span></p>
+                            </td>
+                            <td style="width:18.52%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">15.23</span></span></span></p>
+                            </td>
+                        </tr>
+                        <tr style="height:29px;">
+                            <td style="width:18.52%;border:none;border-bottom:solid #F79646 1.0pt;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">24,636</span></span></span></p>
+                            </td>
+                            <td style="width:18.52%;border:none;border-bottom:solid #F79646 1.0pt;padding:0in 0in 0in 0in;height:29px;">
+                                <p align="center" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:ltr;unicode-bidi:embed;"><span style="font-size:16px;"><span style="font-family:times new roman,times,serif;"><span style="color:black;">3.09</span></span></span></p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="clear: both; text-align: right;"><img alt="" src="https://argaamplus.s3.amazonaws.com/4a74d927-125c-477e-8d3f-4e988321449f.png" style="width: 80px; height: 20px;" class="image-spacing"></div>
+
+
+                <div class="file-attachment">
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
         </div>
     </div>
-    <div class="row">
-        <input type="button" onclick="window.location.href='/'" value="GO TO Browser Based" />
-    </div>
-    <p id="speakpara">
-        A number of Saudi-listed companies temporarily closed their branches across the kingdom, in line with the Kingdom’s efforts to control the spread of coronavirus (COVID-19), data compiled by Argaam showed.
+        <div class="col-md-12">
+            <span><input type="radio" value="ar" name="article" />Arabic</span>
+            <p id="speakparaAR">
+                أعلنت وزارة الصحة، اليوم الإثنين، ارتفاع إجمالي الإصابات بفيروس "كورونا" المستجد (كوفيد - 19) في المملكة إلى 87142 حالة مؤكدة، بزيادة 1881 إصابة عن المسجلة أمس.
 
 
 
-        The outbreak of COVID-19 affected the companies’ operations, and the relevant financial impact cannot be defined at present.
+                وتم تسجيل 1864 حالة تعافٍ جديدة، لترتفع الحالات الإجمالية للتعافي إلى 64306 حالات (74 % من إجمالي الإصابات المسجلة).
 
 
 
-        Earlier this month, the Kingdom decided to suspend international flights, close malls and supermarkets, and suspend sports and entertainment activities.
+                وأعلنت الوزارة تسجيل 22 حالة وفاة جديدة، ليصل عدد الوفيات الكلي إلى 525 حالة وفاة.
 
 
 
-        The decision came in accordance with the preventive and precautionary measures recommended by the competent health authorities in the Kingdom, as part of its efforts to curb the spread of the novel coronavirus (COVID19).
-    </p>
+                وجاءت أعلى الإصابات بين المدن في الرياض، التي سجلت 668 حالة إصابة، تلتها جدة 293 إصابة، ثم الدمام 290 إصابة، ومكة المكرمة 164 حالة.
 
 
-</div>
+
+                وتم إجراء 15854 فحصا مخبريا جديدا، ليصل إجمالي الفحوص المخبرية الدقيقة التي تم إجراؤها بالمملكة إلى 838.62 ألف فحص مخبري للكورونا.
+            </p>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" dir="rtl" style="width:100.0%;background:white;border-collapse:collapse;" width="100%">
+                <tbody>
+                    <tr style="height:29px;">
+                        <td colspan="4" style="width:100.0%;border:none;border-bottom:solid #F4B083 1.0pt;background:transparent;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:#E36C0A;">توقعات</span></strong><span style="color:#E36C0A;">&nbsp;<strong>"الأهلي كابيتال"</strong>&nbsp;<strong>لأرباح الربع الثالث 2020 لعدد من البنوك والشركات (مليون ريال)</strong></span></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">الشركة</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">الربع الثا</span></strong><strong><span style="color:black;">لث</span></strong><strong><span style="color:black;"> 2020 (المتوقع)</span></strong></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">التغير قياسًا بالربع الثالث 2019</span></strong></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#D9D9D9;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">&nbsp;متوسط توقعات المحللين</span></strong></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td colspan="4" style="width:100.0%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">قطاع البتروكيماويات</span></strong></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">سابك</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span dir="LTR"><span style="color:black;">818.0</span></span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:#00B050;">+ 22 </span><span dir="LTR"><span style="color:#00B050;">%</span></span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/77/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">المجموعة السعودية</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">101.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(37 %)</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/86/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">ينساب</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">144.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(32 %)</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/88/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">التصنيع</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(49.0)</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">--</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/72/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">سبكيم</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(15.0)</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">--</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/585/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">سافكو</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">339.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(18 %)</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/79/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">كيان</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(178.0)</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">--</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/598/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">بتروكيم</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">108.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(37 %)</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/923/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td colspan="4" style="width:100.0%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">قطاع الاتصالات</span></strong></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">إس تي سي</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">2700.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(2 %)</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/30/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">اتحاد الاتصالات</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">140.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:#00B050;">+ 174 %</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/31/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">زين</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">74.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(39 %)</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/1058/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td colspan="4" style="width:100.0%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">قطاعات&nbsp;الأغذية والزراعة</span></strong></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">صافولا</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">265.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:#00B050;">+ 19 %</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/85/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td colspan="4" style="width:100.0%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">الرعاية الصحية</span></strong></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">السعودي الألماني</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">36.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:#00B050;">+ 8 %</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/4475/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">المواساة</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">120.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:#00B050;">+ 29 %</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/1524/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">الحمادي</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">27.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:#00B050;">+ 28 %</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/3438/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">مجموعة سليمان الحبيب</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">242.0</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:#00B050;">+ 22 </span><span dir="LTR"><span style="color:#00B050;">%</span></span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/4433/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td colspan="4" style="width:100.0%;border:none;border-bottom:solid #BFBFBF 1.0pt;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">قطاع السياحة</span></strong></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">الخدمات الأرضية</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(73.0)</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">--</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/3433/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                    <tr style="height:29px;">
+                        <td style="width:28.64%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:right;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><strong><span style="color:black;">التموين</span></strong></span></span></p>
+                        </td>
+                        <td style="width:26.18%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:red;">(68.0)</span></span></span></p>
+                        </td>
+                        <td style="width:19.84%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><span style="color:black;">--</span></span></span></p>
+                        </td>
+                        <td style="width:25.34%;border:none;border-bottom:solid #BFBFBF 1.0pt;padding:0in 5.4pt 0in 5.4pt;height:29px;">
+                            <p align="center" dir="RTL" style="margin-bottom:0in;margin-bottom:.0001pt;text-align:center;line-height:normal;direction:rtl;unicode-bidi:embed;"><span style="font-family:times new roman,times,serif;"><span style="font-size:18px;"><a href="https://www.argaam.com/ar/analystestimates/analystrecomendationsestimate/3/1897/4" target="_blank"><span style="color:#2462B4;">متوسط التوقعات</span></a></span></span></p>
+                        </td>
+                    </tr>
+                   
+                    
+                </tbody>
+            </table>
+        </div>
+
 <script type="text/javascript">
 
     var synth = window.speechSynthesis;
     var voices = []
     var voiceSelect = $("#voiceSelect");
-
-    const populateVoices = () => {
-        var selectedVoice = "";
-        if (voices.length !== 0) {
-            selectedVoice = voiceSelect.val();
-        }
-        voices = synth.getVoices();
-        voiceSelect[0].innerHTML = "<option value='-1'>Select Voice</option>";
-
-        voices.forEach(voice => {
-            let option = document.createElement("option");
-            option.textContent = `${voice.name} (${voice.lang})`;
-            option.value = voice.name;
-            voiceSelect[0].appendChild(option);
-        });
-        if (selectedVoice !== "") {
-            voiceSelect.val(selectedVoice);
-        }
-    }
+    $('[name="article"]').change(e => {
+        if (e.target.value == "en") $('#lang').val('en-us');
+        else $('#lang').val('ar-sa');
+    });
+    
     const speak = () => {
         let toSpeak = $('#speaktext').val();
-        
+        let voice = $('#voice').val();
+        let lang = $('#lang').val();
+        let rate = parseFloat($('#rate').val());
+        if (voice == "-1") {
+            alert("Please select voice");
+            return;
+        }
+        if (lang == "-1") {
+            alert("Please selct language");
+            return;
+        }
+
+
             if (toSpeak == "") {
-                toSpeak = $('#speakpara').html();
-            }
+                toSpeak = $('[name="article"]:checked').val() == "ar" ? $('#speakparaAR').parent().html() : $('#speakparaEN').parent().html();
+                toSpeak = toSpeak.replace(/\<[^>]+\>/g, "").replace(/&nbsp;/g,",").replace(/\s{2,}/g,",");
+        }
+
+        $('#rate').change(e => {
+            $("#speechPlay")[0].playbackRate = e.target.value;
+        });
        
         $.ajax({
-            url: '/Home/TextToSpeech?text=' + toSpeak,
+            url: '/Home/TextToSpeech',
             method: "POST",
             responseType: 'blob',
             data: {
                 "text": toSpeak,
+                "voice": voice,
+                "lang": lang,
+                "rate": 1,
             },
             success: result => {
                 let blob = new Blob([result], { type: 'audio/mpeg' });
@@ -91,10 +551,7 @@
         });
     }
     $(document).ready(() => {
-        populateVoices();
-        if (synth.onvoiceschanged !== undefined)
-            synth.onvoiceschanged = populateVoices;
-
+       
     }
     )
 </script>

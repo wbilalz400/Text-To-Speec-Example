@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using Google.Apis.Auth.OAuth2;
+
 using System.Web.Mvc;
 
 namespace Text_To_Speec_Example.Controllers
@@ -21,44 +23,81 @@ namespace Text_To_Speec_Example.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult TextToSpeech(string text)
+        public ActionResult TextToSpeech(string text, string lang, string voice, double rate)
         {
-            TextToSpeechClient client = TextToSpeechClient.Create();
+            try
 
-            // Set the text input to be synthesized.
-            SynthesisInput input = new SynthesisInput
             {
-                Text = text
-            };
+                TextToSpeechClient client;
+                try
+                {
+                    client = TextToSpeechClient.Create();
+                }
+                catch (Exception e)
+                {
+                    var clientBuilder = new TextToSpeechClientBuilder();
+                    clientBuilder.CredentialsPath = Server.MapPath("/Views/key.json");
+                    client = clientBuilder.Build();
 
-            // Build the voice request, select the language code ("en-US"),
-            // and the SSML voice gender ("neutral").
-            VoiceSelectionParams voice = new VoiceSelectionParams
-            {
-                LanguageCode = "en-US",
-                SsmlGender = SsmlVoiceGender.Female
-            };
-         
+                }
 
-            // Select the type of audio file you want returned.
-            AudioConfig config = new AudioConfig
-            {
-                AudioEncoding = AudioEncoding.Mp3
-            };
+                // Set the text input to be synthesized.
+                SynthesisInput input = new SynthesisInput
+                {
+                    Text = text
+                };
 
-            // Perform the Text-to-Speech request, passing the text input
-            // with the selected voice parameters and audio file type
-            var response = client.SynthesizeSpeech(new SynthesizeSpeechRequest
-            {
-                Input = input,
-                Voice = voice,
-                AudioConfig = config
-            });
-           
-            // Write the binary AudioContent of the response to an MP3 file.
-   
+                // Build the voice request, select the language code ("en-US"),
+                // and the SSML voice gender ("neutral").
+                SsmlVoiceGender gender;
+                switch (voice)
+                {
+                    case "0":
+                        gender = SsmlVoiceGender.Male;
+                        break;
+                    case "1":
+                        gender = SsmlVoiceGender.Female;
+                        break;
+                    default:
+                        gender = SsmlVoiceGender.Neutral;
+                        break;
+
+                }
+
+                VoiceSelectionParams voiceSel = new VoiceSelectionParams
+                {
+                    LanguageCode = lang,
+                    SsmlGender = gender,
+                  
+                };
+
+
+                // Select the type of audio file you want returned.
+                AudioConfig config = new AudioConfig
+                {
+                    AudioEncoding = AudioEncoding.Mp3,
+                    SpeakingRate = rate,
+                    
+                    
+                    
+                };
+
+                // Perform the Text-to-Speech request, passing the text input
+                // with the selected voice parameters and audio file type
+                var response = client.SynthesizeSpeech(new SynthesizeSpeechRequest
+                {
+                    Input = input,
+                    Voice = voiceSel,
+                    AudioConfig = config
+                });
+
+                // Write the binary AudioContent of the response to an MP3 file.
+
                 return Content(response.AudioContent.ToBase64());
-          
+            }catch (Exception e)
+            {
+                return Content(e.ToString());
+            }
         }
         public ActionResult About()
         {
